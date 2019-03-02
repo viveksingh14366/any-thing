@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Add Item
+    </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Title</ion-label>
+      <ion-input type="text" [(ngModel)]="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-input type="text" [(ngModel)]="description"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Set Alert</ion-label>
+      <ion-toggle (ngModelChange)="showDate()" [(ngModel)]="setAlert"></ion-toggle>
+    </ion-item>
+
+    <ion-item *ngIf=setAlert> 
+      <ion-label (click)="showPrompt()">Set Date & Time</ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label >{{this.dateTime | date: "yyyy/MM/dd HH:mm a"}} </ion-label>
+    </ion-item>
+
+    <!-- <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-datetime displayFormat="DD MMM, YYYY H:mm a" [(ngModel)]="dateTime"></ion-datetime>
+      </ion-item> -->
+
+  </ion-list>
+
+  <button full ion-button color="secondary" (click)="saveItem()">Save</button> 
+
+</ion-content>
