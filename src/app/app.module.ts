@@ -9,13 +9,19 @@ import { AddItemPage } from '../pages/add-item/add-item';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { DataProvider } from '../providers/data/data';
 import { DatePicker } from '@ionic-native/date-picker';
+import { SignupPage } from '../pages/signup/signup';
+import { SigninPage } from '../pages/signin/signin';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AddItemPage,
-    ItemDetailPage
+    ItemDetailPage,
+    SigninPage,
+    SignupPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,10 @@ import { DatePicker } from '@ionic-native/date-picker';
     MyApp,
     HomePage,
     AddItemPage,
-    ItemDetailPage
+    ItemDetailPage,
+    SignupPage,
+    SigninPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
